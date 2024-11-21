@@ -20,8 +20,19 @@
 20. B
 21. 0 2 * * FRI ./backup.sh
 22. a soft link can point to files in a different file system whereas a hardlink cannot point to files on a different system. deleting the target doesn't affect the hardlink while deleting the target affetcs the symlink rendering it broken. to create  hard link `ln -T target linkname` `ln -s linkname target`
-23.  jh
-24.  `export umask 0022`
+23.  to configure eth0, use the command `sudo ifconfig eth0 up`
+    /etc/network/interfaces  ```sh
+   auto eth0
+iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 8.8.8.8 8.8.4.4
+```
+24.   ```sh
+    sudo find /home/user -type f -exec chmod 0644 ()
+    sudo find /home/user -type d exec chmod 0755 ()
+    ```
 25.  the /etc/nsswitch.conf is used to set the rules for name resolution. example; `passwd:         files systemd`
 26.  ```sh
      groupadd sshusers
